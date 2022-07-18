@@ -43,7 +43,7 @@ Resulted in this behavior (all expected)
 
 ### 3) Created Docker runtime from MSSQL standard 2019 image
 
-Docker run.sh: 
+Docker run.sh (using Azure static IP for their DNS server at 10.0.0.4):
 sudo docker run -d -e "ACCEPT_EULA=Y" -e "SA_PASSWORD=BorgGoesLive22" \
    --restart unless-stopped \
    --shm-size 1g \
