@@ -19,9 +19,9 @@ This repo documents the steps one must follow to allow SQL Server running in a L
 ### 1) Created Ubuntu 20.04 host machine: ZLUBE2V-SQL
 
 ### 2) Joined this machine to the Transpara.com Domain
-        Followed instructions at: https://docs.microsoft.com/en-us/azure/active-directory-domain-services/join-ubuntu-linux-vm
-        Resulted in this behavior (all expected)
-        ~$ realm list
+#### Followed instructions at: https://docs.microsoft.com/en-us/azure/active-directory-domain-services/join-ubuntu-linux-vm
+Resulted in this behavior (all expected)
+~$ realm list
         transpara.com
         type: kerberos
         realm-name: TRANSPARA.COM
