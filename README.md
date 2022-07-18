@@ -2,27 +2,27 @@
 
 This repo documents the steps one must follow to allow SQL Server running in a Linux Docker ocontainer hosted on Ubuntu to allow authorization and login by Azure Active Directory Users. 
 
-##Required attributes:
+## Required attributes:
 
 1) Microsoft SQL Server 2019 from standard Microsoft Dockerhub repo
 2) Running in Linux Docker container (whatever is natively used by Microsoft Docker image)
 3) Azure resident host VM running Ubuntu 20.04
 4) Transpara.com Azure Active Directory Domain Users authenticated to SQL in Docker natively.
 
-##Not required (but OK if true):
+## Not required (but OK if true):
 
 5) Host machine joined to Azure AD Domain
 6) Docker container joined to Azure AD Domain
 
-Steps followed:
+## Steps followed:
 
-1) Created Ubuntu 20.04 host machine: ZLUBE2V-SQL
+### 1) Created Ubuntu 20.04 host machine: ZLUBE2V-SQL
 
-2) Joined this machine to the Transpara.com Domain
-https://docs.microsoft.com/en-us/azure/active-directory-domain-services/join-ubuntu-linux-vm
-michael.saucier@ZLUBE2V-SQL:~$ realm list
-transpara.com
-  type: kerberos
+### 2) Joined this machine to the Transpara.com Domain
+        https://docs.microsoft.com/en-us/azure/active-directory-domain-services/join-ubuntu-linux-vm
+        michael.saucier@ZLUBE2V-SQL:~$ realm list
+        transpara.com
+        type: kerberos
   realm-name: TRANSPARA.COM
   domain-name: transpara.com
   configured: kerberos-member
