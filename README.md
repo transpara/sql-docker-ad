@@ -18,7 +18,7 @@ This repo documents the steps one must follow to allow SQL Server running in a L
 
 ### 1) Created Ubuntu 20.04 host machine: ZLUBE2V-SQL
 
-### 2) Joined this machine to the Transpara.com Domain
+### 2) Join this machine to the Transpara.com Domain (optopnal but we did this)
 #### Followed instructions at: https://docs.microsoft.com/en-us/azure/active-directory-domain-services/join-ubuntu-linux-vm
 Resulted in this behavior (all expected)
 ~$ realm list
@@ -63,15 +63,14 @@ sudo docker run -d -e "ACCEPT_EULA=Y" -e "SA_PASSWORD=BorgGoesLive22" \
    --add-host=host.docker.internal:host-gateway \
    mcr.microsoft.com/mssql/server:2019-latest
 
-4) This resulted in a Docker ps like this:
+### 4) This resulted in a Docker ps like this:
 
-    docker ps
-    CONTAINER ID   IMAGE                                        COMMAND                  CREATED      STATUS      PORTS                                       NAMES
-    a374bbaaf8f6   mcr.microsoft.com/mssql/server:2019-latest   "/opt/mssql/bin/perm…"   5 days ago   Up 4 days   0.0.0.0:1433->1433/tcp, :::1433->1433/tcp   sql1
+docker ps
+CONTAINER ID   IMAGE                                        COMMAND                  CREATED      STATUS      PORTS                                       NAMES
+a374bbaaf8f6   mcr.microsoft.com/mssql/server:2019-latest   "/opt/mssql/bin/perm…"   5 days ago   Up 4 days   0.0.0.0:1433->1433/tcp, :::1433->1433/tcp   sql1
     michael.saucier@ZLUBE2V-SQL:~$ 
 
-Enable AD auth
-
-https://docs.microsoft.com/en-us/sql/linux/sql-server-linux-containers-ad-auth-adutil-tutorial?view=sql-server-ver16
+### 5) Enable AD auth
+#### Followed instructions here https://docs.microsoft.com/en-us/sql/linux/sql-server-linux-containers-ad-auth-adutil-tutorial?view=sql-server-ver16
 
 
