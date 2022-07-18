@@ -22,38 +22,22 @@ This repo documents the steps one must follow to allow SQL Server running in a L
 #### Followed instructions at: https://docs.microsoft.com/en-us/azure/active-directory-domain-services/join-ubuntu-linux-vm
 Resulted in this behavior (all expected)
 
-~$ realm list
-
-transpara.com
-
-type: kerberos
-
-realm-name: TRANSPARA.COM
-
-domain-name: transpara.com
-
-configured: kerberos-member
-
-server-software: active-directory
-
-client-software: sssd
-
-required-package: sssd-tools
-
-required-package: sssd
-
-required-package: libnss-sss
-
-required-package: libpam-sss
-
-required-package: adcli
-
-required-package: samba-common-bin
-
-login-formats: %U
-
-login-policy: allow-realm-logins
-
+<p>~$ realm list 
+transpara.com 
+type: kerberos 
+realm-name: TRANSPARA.COM 
+domain-name: transpara.com 
+configured: kerberos-member 
+server-software: active-directory 
+client-software: sssd 
+required-package: sssd-tools 
+required-package: sssd 
+required-package: libnss-sss 
+required-package: libpam-sss 
+required-package: adcli 
+required-package: samba-common-bin 
+login-formats: %U 
+login-policy: allow-realm-logins 
 ~$ 
 
 ### 3) Created Docker runtime from MSSQL standard 2019 image
