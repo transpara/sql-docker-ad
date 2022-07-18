@@ -79,40 +79,15 @@ michael.saucier@ZLUBE2V-SQL:~$
 ### 5) Enable AD auth
 #### Followed instructions here https://docs.microsoft.com/en-us/sql/linux/sql-server-linux-containers-ad-auth-adutil-tutorial?view=sql-server-ver16
 
-### 6) This results in queries like (DNS working fine):
+### 6) This results in queries like (from inside sql1 container using docker exec -it sql bash. DNS is fine)
 
 PING adVM.transpara.com (10.0.0.4) 56(84) bytes of data.
 64 bytes from adVM.transpara.com (10.0.0.4): icmp_seq=1 ttl=127 time=1.05 ms
-64 bytes from adVM.transpara.com (10.0.0.4): icmp_seq=2 ttl=127 time=1.03 ms
-64 bytes from adVM.transpara.com (10.0.0.4): icmp_seq=3 ttl=127 time=1.06 ms
-64 bytes from adVM.transpara.com (10.0.0.4): icmp_seq=4 ttl=127 time=1.57 ms
-64 bytes from adVM.transpara.com (10.0.0.4): icmp_seq=5 ttl=127 time=1.61 ms
-64 bytes from adVM.transpara.com (10.0.0.4): icmp_seq=6 ttl=127 time=1.23 ms
-64 bytes from adVM.transpara.com (10.0.0.4): icmp_seq=7 ttl=127 time=1.56 ms
-64 bytes from adVM.transpara.com (10.0.0.4): icmp_seq=8 ttl=127 time=0.976 ms
-64 bytes from adVM.transpara.com (10.0.0.4): icmp_seq=9 ttl=127 time=0.996 ms
-64 bytes from adVM.transpara.com (10.0.0.4): icmp_seq=10 ttl=127 time=1.04 ms
-64 bytes from adVM.transpara.com (10.0.0.4): icmp_seq=11 ttl=127 time=1.19 ms
---- adVM.transpara.com ping statistics ---
-11 packets transmitted, 11 received, 0% packet loss, time 10013ms
-rtt min/avg/max/mdev = 0.976/1.208/1.609/0.238 ms
 
-root@sql1:/# ping sql1.transpara.com
 PING sql1.transpara.com (172.17.0.2) 56(84) bytes of data.
 64 bytes from sql1 (172.17.0.2): icmp_seq=1 ttl=64 time=0.011 ms
-64 bytes from sql1 (172.17.0.2): icmp_seq=2 ttl=64 time=0.037 ms
-64 bytes from sql1 (172.17.0.2): icmp_seq=3 ttl=64 time=0.040 ms
-64 bytes from sql1 (172.17.0.2): icmp_seq=4 ttl=64 time=0.029 ms
-64 bytes from sql1 (172.17.0.2): icmp_seq=5 ttl=64 time=0.026 ms
---- sql1.transpara.com ping statistics ---
-5 packets transmitted, 5 received, 0% packet loss, time 4073ms
 
-root@sql1:/# ping zlube2v-sql
 PING zlube2v-sql.transpara.com (172.0.2.9) 56(84) bytes of data.
 64 bytes from zlube2v-sql.transpara.com (172.0.2.9): icmp_seq=1 ttl=64 time=0.027 ms
-64 bytes from zlube2v-sql.transpara.com (172.0.2.9): icmp_seq=2 ttl=64 time=0.030 ms
-64 bytes from zlube2v-sql.transpara.com (172.0.2.9): icmp_seq=3 ttl=64 time=0.062 ms
-64 bytes from zlube2v-sql.transpara.com (172.0.2.9): icmp_seq=4 ttl=64 time=0.057 ms
---- zlube2v-sql.transpara.com ping statistics ---
-4 packets transmitted, 4 received, 0% packet loss, time 3032ms
+
 
