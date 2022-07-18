@@ -22,12 +22,12 @@ This repo documents the steps one must follow to allow SQL Server running in a L
 #### Followed instructions at: https://docs.microsoft.com/en-us/azure/active-directory-domain-services/join-ubuntu-linux-vm
 Resulted in this behavior (all expected)
 
-<p>~$ realm list 
-transpara.com 
-type: kerberos 
-realm-name: TRANSPARA.COM 
-domain-name: transpara.com 
-configured: kerberos-member 
+- <p>~$ realm list 
+- transpara.com 
+- type: kerberos 
+- realm-name: TRANSPARA.COM 
+- domain-name: transpara.com 
+- configured: kerberos-member 
 server-software: active-directory 
 client-software: sssd 
 required-package: sssd-tools 
