@@ -23,11 +23,8 @@ This repo documents the steps one must follow to allow SQL Server running in a L
 Resulted in this behavior (all expected)
 
 ~$ realm list
-
 transpara.com
-
 type: kerberos
-
 realm-name: TRANSPARA.COM
 
 domain-name: transpara.com
