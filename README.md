@@ -72,26 +72,43 @@ File krb5.conf is also mapped to container path /etc.
 
 Testing MD linefeed
 
-sudo docker run -d -e "ACCEPT_EULA=Y" -e "SA_PASSWORD=BorgGoesLive22" \/
-    --restart unless-stopped \/
-    --shm-size 1g \/
-    -p 1433:1433 \/
-   `--name sql1 \`
-   `--hostname sql1 \`
-   `-v /datadrive/container/sql1:/var/opt/mssql \`
-   `-v /datadrive/container/sql1/data:/var/opt/mssql/data \`
-   `-v /datadrive/container/sql1/log:/var/opt/mssql/log \`
-   `-v /datadrive/container/sql1/backup:/var/opt/mssql/backup \`
-   `-v /datadrive/container/sql1/secrets:/var/opt/mssql/secrets \`
-   `-v /datadrive/container/sql1/krb5.conf:/etc/krb5.conf \`
-   `--env MSSQL_AGENT_ENABLED=True \`
-   `--dns-search transpara.com \`
-   `--dns 10.0.0.4 \`
-   `--add-host adVM.transpara.com:10.0.0.4 \`
-   `--add-host transpara.com:10.0.0.4 \`
-   `--add-host transpara:10.0.0.4 \`
-   `--add-host=host.docker.internal:host-gateway \`
-   `mcr.microsoft.com/mssql/server:2019-latest`
+sudo docker run -d -e "ACCEPT_EULA=Y" -e "SA_PASSWORD=BorgGoesLive22" \\
+
+--restart unless-stopped \\
+
+--shm-size 1g \\
+
+-p 1433:1433 \\ 
+
+--name sql1 \\--hostname sql1 \\
+
+-v /datadrive/container/sql1:/var/opt/mssql \\
+
+-v /datadrive/container/sql1/data:/var/opt/mssql/data \\
+
+-v /datadrive/container/sql1/log:/var/opt/mssql/log \\
+
+-v /datadrive/container/sql1/backup:/var/opt/mssql/backup \\
+
+-v /datadrive/container/sql1/secrets:/var/opt/mssql/secrets \\
+
+-v /datadrive/container/sql1/krb5.conf:/etc/krb5.conf \\
+
+--env MSSQL_AGENT_ENABLED=True \\--dns-search transpara.com \\
+
+--dns 10.0.0.4 \\
+
+--add-host adVM.transpara.com:10.0.0.4 \\
+
+--add-host transpara.com:10.0.0.4 \\
+
+--add-host transpara:10.0.0.4 \\
+
+--add-host=host.docker.internal:host-gateway \\
+
+mcr.microsoft.com/mssql/server:2019-latest
+
+
 
 5. #### Kerberos files created:
 
