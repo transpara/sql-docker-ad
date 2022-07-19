@@ -7,7 +7,7 @@ Current state: SQL Server is running in Docker hosted on Ubuntu 20.04, which is 
 ## Required attributes:
 
 1) Microsoft SQL Server 2019 from standard Microsoft Dockerhub repo
-2) Running in Linux Docker container (whatever is natively used by Microsoft Docker image)
+2) Running in Linux Docker container (whatever OS is natively used by Microsoft Docker image)
 3) Azure resident host VM running Ubuntu 20.04
 4) Transpara.com Azure Active Directory Domain Users authenticated to SQL in Docker natively.
 
