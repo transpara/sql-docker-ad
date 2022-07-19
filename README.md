@@ -168,7 +168,7 @@ ping sql1.transpara.com (172.17.0.2) 56(84) bytes of data. \
 ping zlube2v-sql.transpara.com (172.0.2.9) 56(84) bytes of data. \
 64 bytes from zlube2v-sql.transpara.com (172.0.2.9): icmp_seq=1 ttl=64 time=0.027 ms \
 
-9. #### Using SQL Server Management Studio from a Peer Node allows me to connect
+9. #### Using SQL Server Management Studio (connected as sa) from a Peer Node allows me to query
 
 select * from sys.database_principals
 
@@ -190,7 +190,13 @@ select * from sys.database_principals
 | db_denydatareader                 | 16392        | R    | DATABASE_ROLE           | NULL                | 2003-04-08 09:10:19.723 | 2009-04-13 12:59:10.327 | 1                   |
 | db_denydatawriter                 | 16393        | R    | DATABASE_ROLE           | NULL                | 2003-04-08 09:10:19.723 | 2009-04-13 12:59:10.327 | 1                   |
 
+10. #### HOWEVER, note the absence of any Windows Principals (such as Network Service or SYSTEM).  So this command fails:
+
+create login [transpara\svc-SQL] From Windows
+
+​	Msg 15401, Level 16, State 1, Line 2
+​	Windows NT user or group 'transpara\svc-SQL' not found. Check the name again.
 
 
 
-
+## AND that is the crux of the biscuit.
