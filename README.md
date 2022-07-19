@@ -113,45 +113,45 @@ mcr.microsoft.com/mssql/server:2019-latest
 5. #### Kerberos files created:
 
 ##### mssql.keytab
-`michael.saucier@ZLUBE2V-SQL:/datadrive/container/sql1/secrets$ ls -al`
-`drwxrwxrwx 2 root  root  45 Jul 12 16:59 .`
-`drwxr-xr-x 7 root  root 108 Jul 13 14:10 ..`
-`-rw------- 1 10001 root  44 Jul 12 14:01 machine-key`
-`-r--r----- 1 10001 root 589 Jul 12 23:12 mssql.keytab`
+michael.saucier@ZLUBE2V-SQL:/datadrive/container/sql1/secrets$ ls -al \
+drwxrwxrwx 2 root  root  45 Jul 12 16:59 . \
+drwxr-xr-x 7 root  root 108 Jul 13 14:10 .. \
+-rw------- 1 10001 root  44 Jul 12 14:01 machine-key \
+-r--r----- 1 10001 root 589 Jul 12 23:12 mssql.keytab \
 
 ##### krb5.conf
-`michael.saucier@ZLUBE2V-SQL:/datadrive/container/sql1$ cat krb5.conf` 
-`[libdefaults]`
-`default_realm = TRANSPARA.COM`
+michael.saucier@ZLUBE2V-SQL:/datadrive/container/sql1$ cat krb5.conf  \
+[libdefaults] \
+default_realm = TRANSPARA.COM \
 
-`[realms]`
-`TRANSPARA.COM = {`
-    `kdc = adVM.transpara.com`
-    `admin_server = adVM.transpara.com`
-    `default_domain = TRANSPARA.COM`
-`}`
+[realms] \
+TRANSPARA.COM = { \
+    kdc = adVM.transpara.com \
+    admin_server = adVM.transpara.com \
+    default_domain = TRANSPARA.COM \
+} \
 
-`[domain_realm]`
-`.transpara.com = TRANSPARA.COM`
-`transpara.com = TRANSPARA.COM`
-`michael.saucier@ZLUBE2V-SQL:/datadrive/container/sql1$` 
+[domain_realm] \
+.transpara.com = TRANSPARA.COM \
+transpara.com = TRANSPARA.COM \
+michael.saucier@ZLUBE2V-SQL:/datadrive/container/sql1$  \
 
 ##### mssql.conf
 
-`michael.saucier@ZLUBE2V-SQL:/datadrive/container/sql1$ cat mssql.conf`
-`[network]`
-`privilegedadaccount = svc-SQL`
-`kerberoskeytabfile = /var/opt/mssql/secrets/mssql.keytab`
+michael.saucier@ZLUBE2V-SQL:/datadrive/container/sql1$ cat mssql.conf \
+[network] \
+privilegedadaccount = svc-SQL \
+kerberoskeytabfile = /var/opt/mssql/secrets/mssql.keytab \
 
 6. #### This resulted in a Docker ps:
 
-`docker ps`
+docker ps \
 
-`CONTAINER ID   IMAGE                                        COMMAND                  CREATED      STATUS      PORTS                                       NAMES`
+CONTAINER ID   IMAGE                                        COMMAND                  CREATED      STATUS      PORTS                                       NAMES \
 
-`a374bbaaf8f6   mcr.microsoft.com/mssql/server:2019-latest   "/opt/mssql/bin/perm…"   5 days ago   Up 4 days   0.0.0.0:1433->1433/tcp, :::1433->1433/tcp   sql1`
+a374bbaaf8f6   mcr.microsoft.com/mssql/server:2019-latest   "/opt/mssql/bin/perm…"   5 days ago   Up 4 days   0.0.0.0:1433->1433/tcp, :::1433->1433/tcp   sql1 \
 
-`michael.saucier@ZLUBE2V-SQL:~$` 
+michael.saucier@ZLUBE2V-SQL:~$ \
 
 7. #### Enable AD auth
 
