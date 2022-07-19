@@ -157,14 +157,40 @@ michael.saucier@ZLUBE2V-SQL:~$ \
 
 Followed instructions here https://docs.microsoft.com/en-us/sql/linux/sql-server-linux-containers-ad-auth-adutil-tutorial?view=sql-server-ver16
 
-8. #### This results in queries like (from inside sql1 container using docker exec -it sql bash. DNS seems to work as expecetd)
+8. #### This results in queries like (from inside sql1 container using docker exec -it sql bash. DNS seems to work as expected)
 
-`ping adVM.transpara.com (10.0.0.4) 56(84) bytes of data.`
-`64 bytes from adVM.transpara.com (10.0.0.4): icmp_seq=1 ttl=127 time=1.05 ms`
+ping adVM.transpara.com (10.0.0.4) 56(84) bytes of data. \
+64 bytes from adVM.transpara.com (10.0.0.4): icmp_seq=1 ttl=127 time=1.05 ms \
 
-`ping sql1.transpara.com (172.17.0.2) 56(84) bytes of data.`
-`64 bytes from sql1 (172.17.0.2): icmp_seq=1 ttl=64 time=0.011 ms`
+ping sql1.transpara.com (172.17.0.2) 56(84) bytes of data. \
+64 bytes from sql1 (172.17.0.2): icmp_seq=1 ttl=64 time=0.011 ms \
 
-`ping zlube2v-sql.transpara.com (172.0.2.9) 56(84) bytes of data.`
-`64 bytes from zlube2v-sql.transpara.com (172.0.2.9): icmp_seq=1 ttl=64 time=0.027 ms`
+ping zlube2v-sql.transpara.com (172.0.2.9) 56(84) bytes of data. \
+64 bytes from zlube2v-sql.transpara.com (172.0.2.9): icmp_seq=1 ttl=64 time=0.027 ms \
 
+9. #### Using SQL Server Management Studio from a Peer Node allows me to connect
+
+select * from sys.database_principals
+
+| name                              | principal_id | type | type_desc               | default_schema_name | create_date             | modify_date             | owning_principal_id |
+| --------------------------------- | ------------ | ---- | ----------------------- | ------------------- | ----------------------- | ----------------------- | ------------------- |
+| public                            | 0            | R    | DATABASE_ROLE           | NULL                | 2003-04-08 09:10:19.630 | 2009-04-13 12:59:10.310 | 1                   |
+| guest                             | 2            | S    | SQL_USER                | guest               | 2003-04-08 09:10:19.647 | 2003-04-08 09:10:19.647 | NULL                |
+| dbo                               | 1            | S    | SQL_USER                | dbo                 | 2003-04-08 09:10:19.600 | 2003-04-08 09:10:19.600 | NULL                |
+| INFORMATION_SCHEMA                | 3            | S    | SQL_USER                | NULL                | 2009-04-13 12:59:06.013 | 2009-04-13 12:59:06.013 | NULL                |
+| sys                               | 4            | S    | SQL_USER                | NULL                | 2009-04-13 12:59:06.013 | 2009-04-13 12:59:06.013 | NULL                |
+| ##MS_PolicyEventProcessingLogin## | 5            | S    | SQL_USER                | dbo                 | 2022-05-29 16:33:49.293 | 2022-05-29 16:33:49.293 | NULL                |
+| ##MS_AgentSigningCertificate##    | 6            | C    | CERTIFICATE_MAPPED_USER | NULL                | 2022-05-29 16:33:54.973 | 2022-05-29 16:33:54.973 | NULL                |
+| db_owner                          | 16384        | R    | DATABASE_ROLE           | NULL                | 2003-04-08 09:10:19.677 | 2009-04-13 12:59:10.310 | 1                   |
+| db_accessadmin                    | 16385        | R    | DATABASE_ROLE           | NULL                | 2003-04-08 09:10:19.677 | 2009-04-13 12:59:10.310 | 1                   |
+| db_securityadmin                  | 16386        | R    | DATABASE_ROLE           | NULL                | 2003-04-08 09:10:19.693 | 2009-04-13 12:59:10.310 | 1                   |
+|                                   |              |      |                         |                     |                         |                         |                     |
+|                                   |              |      |                         |                     |                         |                         |                     |
+|                                   |              |      |                         |                     |                         |                         |                     |
+|                                   |              |      |                         |                     |                         |                         |                     |
+
+|db_backupoperator	16389	R	DATABASE_ROLE	NULL	2003-04-08 09:10:19.710	2009-04-13 12:59:10.327	1	
+|db_datareader	16390	R	DATABASE_ROLE	NULL	2003-04-08 09:10:19.710	2009-04-13 12:59:10.327	1	
+|db_datawriter	16391	R	DATABASE_ROLE	NULL	2003-04-08 09:10:19.710	2009-04-13 12:59:10.327	1	
+|db_denydatareader	16392	R	DATABASE_ROLE	NULL	2003-04-08 09:10:19.723	2009-04-13 12:59:10.327	1	
+|db_denydatawriter	16393	R	DATABASE_ROLE	NULL	2003-04-08 09:10:19.723	2009-04-13 12:59:10.327	1	
