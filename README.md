@@ -2,6 +2,8 @@
 
 This repo documents the steps one must follow to allow SQL Server running in a Linux Docker ocontainer hosted on Ubuntu to allow authorization and login by Azure Active Directory Users. 
 
+Current state: SQL Server is running in Docker hosted on Ubuntu 20.04, which is a VM hosted in Azure. All DBs which are hosted by this SQL Server can be consumed as if they were running on a Windows machine as long as SQL logins are used. However, for our application, we require Windows logins.
+
 ## Required attributes:
 
 1) Microsoft SQL Server 2019 from standard Microsoft Dockerhub repo
