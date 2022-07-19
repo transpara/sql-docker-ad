@@ -184,13 +184,13 @@ select * from sys.database_principals
 | db_owner                          | 16384        | R    | DATABASE_ROLE           | NULL                | 2003-04-08 09:10:19.677 | 2009-04-13 12:59:10.310 | 1                   |
 | db_accessadmin                    | 16385        | R    | DATABASE_ROLE           | NULL                | 2003-04-08 09:10:19.677 | 2009-04-13 12:59:10.310 | 1                   |
 | db_securityadmin                  | 16386        | R    | DATABASE_ROLE           | NULL                | 2003-04-08 09:10:19.693 | 2009-04-13 12:59:10.310 | 1                   |
-|                                   |              |      |                         |                     |                         |                         |                     |
-|                                   |              |      |                         |                     |                         |                         |                     |
-|                                   |              |      |                         |                     |                         |                         |                     |
-|                                   |              |      |                         |                     |                         |                         |                     |
+| db_backupoperator                 | 16389        | R    | DATABASE_ROLE           | NULL                | 2003-04-08 09:10:19.710 | 2009-04-13 12:59:10.327 | 1                   |
+| db_datareader                     | 16390        | R    | DATABASE_ROLE           | NULL                | 2003-04-08 09:10:19.710 | 2009-04-13 12:59:10.327 | 1                   |
+| db_datawriter                     | 16391        | R    | DATABASE_ROLE           | NULL                | 2003-04-08 09:10:19.710 | 2009-04-13 12:59:10.327 | 1                   |
+| db_denydatareader                 | 16392        | R    | DATABASE_ROLE           | NULL                | 2003-04-08 09:10:19.723 | 2009-04-13 12:59:10.327 | 1                   |
+| db_denydatawriter                 | 16393        | R    | DATABASE_ROLE           | NULL                | 2003-04-08 09:10:19.723 | 2009-04-13 12:59:10.327 | 1                   |
 
-|db_backupoperator	16389	R	DATABASE_ROLE	NULL	2003-04-08 09:10:19.710	2009-04-13 12:59:10.327	1	
-|db_datareader	16390	R	DATABASE_ROLE	NULL	2003-04-08 09:10:19.710	2009-04-13 12:59:10.327	1	
-|db_datawriter	16391	R	DATABASE_ROLE	NULL	2003-04-08 09:10:19.710	2009-04-13 12:59:10.327	1	
-|db_denydatareader	16392	R	DATABASE_ROLE	NULL	2003-04-08 09:10:19.723	2009-04-13 12:59:10.327	1	
-|db_denydatawriter	16393	R	DATABASE_ROLE	NULL	2003-04-08 09:10:19.723	2009-04-13 12:59:10.327	1	
+
+
+
+
