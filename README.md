@@ -70,10 +70,12 @@ Files krb5.conf and mssql.conf are located in /sql1 and are mapped to container 
 File mssql.keytab is located in folder /secrets and mapped to container path /var/opt/mssql/secrets. 
 File krb5.conf is also mapped to container path /etc.
 
-`sudo docker run -d -e "ACCEPT_EULA=Y" -e "SA_PASSWORD=BorgGoesLive22" \`
-   `--restart unless-stopped \`
-   `--shm-size 1g \`
-   `-p 1433:1433 \`
+Testing MD linefeed
+
+sudo docker run -d -e "ACCEPT_EULA=Y" -e "SA_PASSWORD=BorgGoesLive22" \/
+    --restart unless-stopped \/
+    --shm-size 1g \/
+    -p 1433:1433 \/
    `--name sql1 \`
    `--hostname sql1 \`
    `-v /datadrive/container/sql1:/var/opt/mssql \`
